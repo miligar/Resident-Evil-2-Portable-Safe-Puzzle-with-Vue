@@ -30,6 +30,7 @@ const app = Vue.createApp({
 
    counterLights: 0,
    lastLight: 0,
+   blocked: false,
   };
  },
  computed: {},
@@ -51,6 +52,8 @@ const app = Vue.createApp({
    const key = "key" + num + "pressed";
    if (this[key]) {
     return true;
+   } else if (this.blocked === true) {
+    return true;
    } else {
     this[key] = !this[key];
 
@@ -60,37 +63,49 @@ const app = Vue.createApp({
       newLight = i;
      }
     }
+    this["light" + newLight + "active"] = true;
     let lightDifference = newLight - this.lastLight;
     if (
      (this.lastLight === 8 && newLight === 1) ||
      lightDifference === 1 ||
      this.lastLight === 0
     ) {
-     console.log("this is the new light" + " " + newLight);
-     console.log("this is the last light" + " " + this.lastLight);
-
-     this["light" + newLight + "active"] = true;
-
      this.lastLight = newLight;
      this.counterLights++;
      if (this.counterLights === 8) {
       this.counterLights = 0;
       this.lastLight = 0;
-      for (i = 1; i <= 8; i++) {
-       this["light" + i + "active"] = false;
-       this["key" + i + "pressed"] = false;
+      let counter = 0;
+      for (i = 1; i < 6; i++) {
+       setTimeout(() => {
+        for (j = 1; j <= 8; j++) {
+         this["light" + j + "active"] = !this["light" + j + "active"];
+        }
+        console.log(counter);
+        counter++;
+       }, 600 * i);
       }
+
+      setTimeout(() => {
+       for (i = 1; i <= 8; i++) {
+        this["key" + i + "pressed"] = false;
+       }
+      }, 3000);
       this.assignKeys();
       return true;
      }
      return true;
     } else {
+     this.blocked = true;
      this.counterLights = 0;
      this.lastLight = 0;
-     for (i = 1; i <= 8; i++) {
-      this["light" + i + "active"] = false;
-      this["key" + i + "pressed"] = false;
-     }
+     setTimeout(() => {
+      for (i = 1; i <= 8; i++) {
+       this["light" + i + "active"] = false;
+       this["key" + i + "pressed"] = false;
+      }
+      this.blocked = false;
+     }, 800);
      return true;
     }
    }
