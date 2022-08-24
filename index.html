@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>RE2 Portable Safe Puzzle</title>
+ <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="styles.css" />
+ <script src="https://unpkg.com/vue@next" defer></script>
+ <script src="app.js" defer></script>
+</head>
+
+<body>
+ <header>
+  <h1>RE2 Portable Safe Puzzle</h1>
+ </header>
+ <section id="game">
+  <div class="box">
+   <div class="container">
+    <div class="lightContainer">
+     <div class="arrowsContainer">R.P.D
+      <i class="arrow left"></i>
+      <i class="arrow down"></i>
+      <i class="arrow right"></i>
+      <i class="arrow up"></i></div>
+     <div id='light1' class="light" :class="{lightActive: light1active}"></div>
+     <div id='light2' class="light" :class="{lightActive: light2active}"></div>
+     <div id='light3' class="light" :class="{lightActive: light3active}"></div>
+     <div id='light4' class="light" :class="{lightActive: light4active}"></div>
+     <div id='light5' class="light" :class="{lightActive: light5active}"></div>
+     <div id='light6' class="light" :class="{lightActive: light6active}"></div>
+     <div id='light7' class="light" :class="{lightActive: light7active}"></div>
+     <div id='light8' class="light" :class="{lightActive: light8active}"></div>
+    </div>
+    <div class="keysContainer">
+     <div class="keySquare">
+      <div id='key1' class="key" :class="{pressedKey:key1pressed}" @click="pressKey(1)"></div>
+     </div>
+     <div class="keySquare">
+      <div id='key2' class="key" :class="{pressedKey:key2pressed}" @click="pressKey(2)"></div>
+     </div>
+     <div class="keySquare">
+      <div id='key3' class="key" :class="{pressedKey:key3pressed}" @click="pressKey(3)"></div>
+     </div>
+     <div class="keySquare">
+      <div id='key4' class="key" :class="{pressedKey:key4pressed}" @click="pressKey(4)"></div>
+     </div>
+     <div class="keySquare">
+      <div id='key5' class="key" :class="{pressedKey:key5pressed}" @click="pressKey(5)"></div>
+     </div>
+     <div class="keySquare">
+      <div id='key6' class="key" :class="{pressedKey:key6pressed}" @click="pressKey(6)"></div>
+     </div>
+     <div class="keySquare">
+      <div id='key7' class="key" :class="{pressedKey:key7pressed}" @click="pressKey(7)"></div>
+     </div>
+     <div class="keySquare">
+      <div id='key8' class="key" :class="{pressedKey:key8pressed}" @click="pressKey(8)"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+* {
+ box-sizing: border-box;
+}
+
+html {
+ font-family: "Jost", sans-serif;
+ margin: 0;
+ height: 100vh;
+}
+
+body {
+ margin: 0;
+ padding: 0;
+ height: 100vh;
+}
+h1 {
+ margin: 0;
+ font-size: min(2.8vh, 6vw);
+}
+header {
+ background-color: #0f0f0f;
+ color: white;
+ height: 5%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+#game {
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ height: 95%;
+ max-width: 100%;
+ padding-top: 1.5%;
+ background-image: repeating-linear-gradient(#151515, #2c2c2c, #151515 90%);
+}
+
+.box {
+ position: relative;
+ background-color: #727e81;
+ aspect-ratio: 1/2.5;
+ width: 35vh;
+ max-width: 90%;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ /* padding: 0.5% 1.5% 1.5% 1.5%; */
+ border-radius: 5%;
+ border: 5px #959c95;
+ border-style: outset outset outset outset;
+}
+.container {
+ background-color: #303a3d;
+ height: 100%;
+ width: 95%;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ padding: 7%;
+ border-radius: 10rem 10rem 0 0;
+ border: 5px #6e7068;
+ border-style: outset ridge ridge outset;
+ margin: 2.5%;
+}
+.lightContainer {
+ position: relative;
+ background-color: #252728;
+ border: 2px solid #879293;
+ width: 100%;
+ aspect-ratio: 1/1;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.arrowsContainer {
+ background-color: #3c4448;
+ width: 50%;
+ height: 50%;
+ aspect-ratio: 1/1;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: #b8c4c8;
+ font-size: min(1.9vh, 4.9vw);
+ border: 3px #959c95;
+ border-style: outset outset outset outset;
+}
+.arrow {
+ border: solid #b8c4c8;
+ border-width: 0 1px 1px 0;
+ display: inline-block;
+ padding: 3px;
+ width: 4%;
+ height: 4%;
+ transform-origin: 50% 50%;
+}
+.left {
+ transform: rotate(135deg);
+ position: absolute;
+ left: 50%;
+ top: 30%;
+}
+.down {
+ transform: rotate(45deg);
+ position: absolute;
+ left: 30%;
+ top: 48%;
+}
+.right {
+ transform: rotate(-45deg);
+ position: absolute;
+ left: 48%;
+ top: 65%;
+}
+.up {
+ transform: rotate(-135deg);
+ position: absolute;
+ left: 65%;
+ top: 50%;
+}
+.light {
+ background: radial-gradient(#555f61, #1c1e1f);
+ height: 10%;
+ width: 10%;
+ border: 1px solid #1c1e1f;
+ border-radius: 50%;
+ position: absolute;
+ left: 45%;
+ top: 8%;
+ transform-origin: 50% 420%;
+}
+.lightActive {
+ background: radial-gradient(#2ffffe, #33884f);
+}
+
+#light1 {
+ transform: rotateZ(337.5deg);
+}
+#light2 {
+ transform: rotateZ(292.5deg);
+}
+#light3 {
+ transform: rotateZ(247.5deg);
+}
+#light4 {
+ transform: rotateZ(202.5deg);
+}
+#light5 {
+ transform: rotateZ(157.5deg);
+}
+#light6 {
+ transform: rotateZ(112.5deg);
+}
+#light7 {
+ transform: rotateZ(67.5deg);
+}
+#light8 {
+ transform: rotate(22.5deg);
+}
+.keysContainer {
+ /* position: relative; */
+
+ width: 100%;
+ aspect-ratio: 1/1.6;
+ border-radius: 5%;
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: space-evenly;
+ align-items: space-evenly;
+ margin-bottom: 10%;
+ padding: 5%;
+}
+.keySquare {
+ background-color: #2d3033;
+ width: 25%;
+ aspect-ratio: 1/1;
+ /* padding: 5%; */
+ margin: 10%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border: 4px inset #3d4546;
+}
+.key {
+ width: 70%;
+ aspect-ratio: 1/1;
+ background-color: RGB(118, 125, 118);
+ /* border: 1px solid black; */
+ box-shadow: inset -10px -20px 10px rgba(19, 23, 23, 0.8),
+  5px 7px 1px rgba(19, 23, 23, 0.8), -1px -1px 0px rgba(19, 23, 23, 1);
+ border-radius: 50%;
+ border-bottom: 1px solid black;
+ /* border-right: 2px solid black; */
+}
+.pressedKey {
+ width: 65%;
+ background-color: RGB(68, 71, 64);
+ box-shadow: inset -20px -20px 5px rgba(0, 0, 0, 0.7),
+  2px 3px 1px rgba(19, 23, 23, 0.8), -1px -1px 0px rgba(19, 23, 23, 1);
+}
