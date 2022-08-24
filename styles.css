@@ -40,7 +40,7 @@ header {
 .box {
  position: relative;
  background-color: #727e81;
- aspect-ratio: 1/2.5;
+ aspect-ratio: 1/2.4;
  width: 35vh;
  max-width: 90%;
  display: flex;

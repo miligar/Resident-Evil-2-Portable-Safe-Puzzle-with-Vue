@@ -5,3 +5,5 @@ It has been coded using HTML5, CSS3, JavaScript and VueJS.
 It stills needs to be optimized but for now it works well.
 
 You can Play it on:
+
+https://miligar.github.io/Resident-Evil-2-Portable-Safe-Puzzle-with-Vue/
